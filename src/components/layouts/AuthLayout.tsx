@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import { ReactNode, useEffect, useState } from 'react';
-import { MainLogo, SosLogo } from '../assets/images';
+import { MainLogo, SosLogo } from '../../assets/images';
 
 export const AuthLayout = ({ children }: { children: ReactNode }) => {
   const [keyboardShown, setKeyboardShown] = useState(false);
