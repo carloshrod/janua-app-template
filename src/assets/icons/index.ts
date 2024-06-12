@@ -1,0 +1,10 @@
+export const VisitControlIcon = require('./visit-control.png');
+export const AppointmentIcon = require('./appointment.png');
+export const PaymentIcon = require('./payment.png');
+export const SpeakerIcon = require('./speaker.png');
+export const DocumentIcon = require('./document.png');
+export const AlertIcon = require('./alert.png');
+export const MaxSpeedIcon = require('./max-speed.png');
+export const ShowQrIcon = require('./show-qr.png');
+export const NoGarbageIcon = require('./no-garbage.png');
+export const AvatarIcon = require('./avatar.png');
