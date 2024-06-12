@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen } from '../screens';
+import { EventsScreen, HomeScreen } from '../screens';
 import { Icon } from 'react-native-paper';
 
 export type ProtectedScreensTabNavigatorProps = {
   Home: undefined;
+  Eventos: undefined;
 };
 
 const Tab = createBottomTabNavigator<ProtectedScreensTabNavigatorProps>();
@@ -17,6 +18,13 @@ export const ProtectedScreensTabNavigator = () => {
       <Tab.Screen
         name='Home'
         component={HomeScreen}
+        options={{
+          tabBarIcon: HomeTabBarIcon,
+        }}
+      />
+      <Tab.Screen
+        name='Eventos'
+        component={EventsScreen}
         options={{
           tabBarIcon: HomeTabBarIcon,
         }}
