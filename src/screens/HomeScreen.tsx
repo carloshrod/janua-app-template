@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
   title: {
     paddingTop: 16,
     marginBottom: 8,
-    fontFamily: 'DMSansBold',
+    fontFamily: 'DMSans-Bold',
     fontSize: 24,
     color: '#FFFFFF',
   },
   subTitle: {
-    fontFamily: 'DMSans',
+    fontFamily: 'DMSans-Regular',
     fontSize: 16,
     color: '#FFFFFF',
   },

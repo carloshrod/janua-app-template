@@ -5,9 +5,9 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { ReactNode } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Button } from 'react-native-paper';
 import { CustomInput } from './CustomInput';
 import { MainNavigationProp } from '../navigators';
+import { CustomButton } from './CustomButton';
 
 export interface InputField {
   name: 'email' | 'username' | 'password' | 'repeatPassword';
@@ -87,18 +87,11 @@ export const FormAuth = ({ children }: { children?: ReactNode }) => {
         </View>
       ))}
 
-      <Button
-        mode='contained'
-        buttonColor='#000000'
-        textColor='#FFCD06'
-        style={styles.button}
-        contentStyle={styles.buttonContent}
-        labelStyle={styles.buttonLabel}
-        disabled={isSubmitting}
-        loading={isSubmitting}
-        onPress={onSubmit}>
-        {btnLabel}
-      </Button>
+      <CustomButton
+        label={btnLabel}
+        isSubmitting={isSubmitting}
+        onPress={onSubmit}
+      />
 
       {children}
     </View>
@@ -129,17 +122,5 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '100%',
-  },
-  button: {
-    width: '100%',
-    marginTop: 8,
-    borderRadius: 24,
-  },
-  buttonContent: {
-    height: 48,
-  },
-  buttonLabel: {
-    fontFamily: 'DMSans-Medium',
-    fontSize: 16,
   },
 });

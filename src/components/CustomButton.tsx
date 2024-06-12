@@ -1,36 +1,45 @@
-import { Text, StyleSheet, Pressable, DimensionValue } from 'react-native';
+import { StyleSheet, DimensionValue } from 'react-native';
+import { Button } from 'react-native-paper';
 
 interface ButtonProps {
   label: string;
   width?: DimensionValue;
-  onPress: () => null;
+  isSubmitting?: boolean;
+  onPress: any;
 }
 
 export const CustomButton = ({
   label,
-  width,
+  width = undefined,
+  isSubmitting,
   onPress = () => null,
 }: ButtonProps) => {
   return (
-    <Pressable style={[styles.button, { width }]} onPress={onPress}>
-      <Text style={styles.label}>{label}</Text>
-    </Pressable>
+    <Button
+      mode='contained'
+      buttonColor='#000000'
+      textColor='#FFCD06'
+      style={[styles.button, { width: width ?? '100%' }]}
+      contentStyle={styles.buttonContent}
+      labelStyle={styles.buttonLabel}
+      disabled={isSubmitting}
+      loading={isSubmitting}
+      onPress={onPress}>
+      {label}
+    </Button>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    height: 48,
     marginTop: 8,
-    paddingHorizontal: 32,
-    backgroundColor: '#000000',
     borderRadius: 24,
   },
-  label: {
-    fontFamily: 'DMSansMedium',
+  buttonContent: {
+    height: 48,
+  },
+  buttonLabel: {
+    fontFamily: 'DMSans-Medium',
     fontSize: 16,
-    color: '#FFCD06',
-    textAlign: 'center',
-    lineHeight: 48,
   },
 });

@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
     gap: 24,
   },
   labelText: {
-    fontFamily: 'Inter',
-    fontWeight: '600',
+    fontFamily: 'Inter-Regular',
     fontSize: 14,
     color: '#25292E',
   },
