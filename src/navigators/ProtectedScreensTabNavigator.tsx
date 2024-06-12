@@ -1,11 +1,12 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { EventsScreen, HomeScreen, QRScreen } from '../screens';
+import { EventsScreen, QRScreen } from '../screens';
 import { Icon } from 'react-native-paper';
 import { Image } from 'react-native';
 import { CalendarIcon } from '../assets/icons';
+import { HomeStackNavigator } from './HomeStackNavigator';
 
 export type ProtectedScreensTabNavigatorProps = {
-  Home: undefined;
+  HomeStack: undefined;
   Eventos: undefined;
   QR: undefined;
 };
@@ -15,13 +16,14 @@ const Tab = createBottomTabNavigator<ProtectedScreensTabNavigatorProps>();
 export const ProtectedScreensTabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName='Home'
+      initialRouteName='HomeStack'
       screenOptions={screenOptions}
       backBehavior='history'>
       <Tab.Screen
-        name='Home'
-        component={HomeScreen}
+        name='HomeStack'
+        component={HomeStackNavigator}
         options={{
+          title: 'Home',
           tabBarIcon: HomeTabBarIcon,
         }}
       />

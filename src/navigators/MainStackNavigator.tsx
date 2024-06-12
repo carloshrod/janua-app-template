@@ -11,10 +11,8 @@ export type MainStackNavigatorProps = {
   'protected-screens': undefined;
 };
 
-export type MainNavigationProp = NativeStackNavigationProp<
-  MainStackNavigatorProps,
-  'login' | 'signup' | 'protected-screens'
->;
+export type MainNavigationProp =
+  NativeStackNavigationProp<MainStackNavigatorProps>;
 
 const Stack = createNativeStackNavigator<MainStackNavigatorProps>();
 
