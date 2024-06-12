@@ -2,7 +2,8 @@ import {
   NativeStackNavigationProp,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import { HomeScreen, LoginScreen, SignupScreen } from '../screens';
+import { LoginScreen, SignupScreen } from '../screens';
+import { ProtectedScreensTabNavigator } from './';
 
 export type MainStackNavigatorProps = {
   login: undefined;
@@ -17,12 +18,17 @@ export type MainNavigationProp = NativeStackNavigationProp<
 
 const Stack = createNativeStackNavigator<MainStackNavigatorProps>();
 
-export function MainStackNavigator() {
+export const MainStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      initialRouteName='login'
+      screenOptions={{ headerShown: false }}>
       <Stack.Screen name='login' component={LoginScreen} />
       <Stack.Screen name='signup' component={SignupScreen} />
-      <Stack.Screen name='protected-screens' component={HomeScreen} />
+      <Stack.Screen
+        name='protected-screens'
+        component={ProtectedScreensTabNavigator}
+      />
     </Stack.Navigator>
   );
-}
+};
