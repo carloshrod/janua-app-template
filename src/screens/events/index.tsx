@@ -1,12 +1,12 @@
 import { View, Text, Image } from 'react-native';
-import { ProtectedLayout } from '../components';
-import { CustomButton } from '../components/CustomButton';
+import { ProtectedLayout } from '../../components';
+import { CustomButton } from '../../components/CustomButton';
 import { Alert } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ProtectedScreensTabNavigatorProps } from '../navigators';
+import { ProtectedScreensTabNavigatorProps } from '../../navigators';
 import { FC } from 'react';
-import { Calendar } from '../assets/images';
+import { Calendar } from '../../assets/images';
 
 export const EventsScreen: FC<
   NativeStackScreenProps<ProtectedScreensTabNavigatorProps, 'Eventos'>

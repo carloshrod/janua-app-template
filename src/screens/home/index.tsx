@@ -1,9 +1,10 @@
 import { FlatList, StyleSheet, Text } from 'react-native';
 import { FC } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ProtectedScreensTabNavigatorProps } from '../navigators';
-import { NavLink, ProtectedLayout } from '../components';
-import { NAVLINK_LABELS } from '../utils/arrays';
+import { ProtectedScreensTabNavigatorProps } from '../../navigators';
+import { ProtectedLayout } from '../../components';
+import { NAVLINK_LABELS } from '../../utils/arrays';
+import { NavLink } from './components/NavLink';
 
 export type HomeScreensStackNavigatorProps = {
   'Control de Acceso': undefined;

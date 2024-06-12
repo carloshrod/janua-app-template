@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { SafeAreaView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { MainNavigationProp, MainStackNavigatorProps } from '../navigators';
+import { MainNavigationProp, MainStackNavigatorProps } from '../../navigators';
 import { Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { AuthLayout, FormAuth } from '../components';
+import { AuthLayout, FormAuth } from '../../components';
 
 export const LoginScreen: FC<
   NativeStackScreenProps<MainStackNavigatorProps, 'login'>
