@@ -1,10 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { EventsScreen, HomeScreen } from '../screens';
+import { EventsScreen, HomeScreen, QRScreen } from '../screens';
 import { Icon } from 'react-native-paper';
+import { Image } from 'react-native';
+import { CalendarIcon } from '../assets/icons';
 
 export type ProtectedScreensTabNavigatorProps = {
   Home: undefined;
   Eventos: undefined;
+  QR: undefined;
 };
 
 const Tab = createBottomTabNavigator<ProtectedScreensTabNavigatorProps>();
@@ -26,7 +29,14 @@ export const ProtectedScreensTabNavigator = () => {
         name='Eventos'
         component={EventsScreen}
         options={{
-          tabBarIcon: HomeTabBarIcon,
+          tabBarIcon: EventsTabBarIcon,
+        }}
+      />
+      <Tab.Screen
+        name='QR'
+        component={QRScreen}
+        options={{
+          tabBarIcon: QRTabBarIcon,
         }}
       />
     </Tab.Navigator>
@@ -48,5 +58,13 @@ const screenOptions = {
 };
 
 const HomeTabBarIcon = ({ color }: { color: string }) => (
-  <Icon size={20} color={color} source='home' />
+  <Icon source='home' size={20} color={color} />
+);
+
+const EventsTabBarIcon = ({ color }: { color: string }) => (
+  <Image source={CalendarIcon} style={{ tintColor: color }} />
+);
+
+const QRTabBarIcon = ({ color }: { color: string }) => (
+  <Icon source='qrcode' size={20} color={color} />
 );
