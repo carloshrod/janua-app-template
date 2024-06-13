@@ -1,22 +1,17 @@
-import {
-  View,
-  Text,
-  Pressable,
-  Image,
-  StyleSheet,
-  ImageProps,
-} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { View, Text, Pressable, Image, StyleSheet } from 'react-native';
 import { Icon } from 'react-native-paper';
+import { NavLinkProps } from '../screens/HomeScreen';
 
-interface NavLinkProps {
-  label: string;
-  icon: ImageProps;
-  onPress?: () => void;
-}
+export const NavLink = ({ label, icon, navigateTo }: NavLinkProps) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<HomeStackNavigatorProps>>();
 
-export const NavLink = ({ label, icon, onPress }: NavLinkProps) => {
   return (
-    <Pressable style={styles.navLink} onPress={onPress}>
+    <Pressable
+      style={styles.navLink}
+      onPress={() => navigation.navigate(navigateTo)}>
       <View style={styles.navLinkLabel}>
         <Image source={icon} />
         <Text style={styles.labelText}>{label}</Text>
