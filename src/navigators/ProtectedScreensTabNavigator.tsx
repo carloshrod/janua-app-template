@@ -5,12 +5,6 @@ import { CalendarIcon } from '../assets/icons';
 import { HomeStackNavigator } from './HomeStackNavigator';
 import { EventsScreen, QRScreen } from '../features';
 
-export type ProtectedScreensTabNavigatorProps = {
-  HomeStack: undefined;
-  Eventos: undefined;
-  QR: undefined;
-};
-
 const Tab = createBottomTabNavigator<ProtectedScreensTabNavigatorProps>();
 
 export const ProtectedScreensTabNavigator = () => {

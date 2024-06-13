@@ -1,10 +1,9 @@
 import { FC } from 'react';
 import { SafeAreaView, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
-  MainNavigationProp,
-  MainStackNavigatorProps,
-} from '../../../navigators';
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 import { Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AuthLayout } from '../../../components';
@@ -13,7 +12,8 @@ import { FormAuth } from '../components/FormAuth';
 export const LoginScreen: FC<
   NativeStackScreenProps<MainStackNavigatorProps, 'login'>
 > = () => {
-  const navigation = useNavigation<MainNavigationProp>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<MainStackNavigatorProps>>();
 
   return (
     <AuthLayout>

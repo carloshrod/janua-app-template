@@ -4,20 +4,14 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { ReactNode } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { MainNavigationProp } from '../../../navigators';
 import {
   INPUT_LOGIN_FIELDS,
   INPUT_REGISTER_FIELDS,
 } from '../../../utils/arrays';
 import { CustomButton, CustomInput } from '../../../components';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export interface InputField {
-  name: 'email' | 'username' | 'password' | 'repeatPassword';
-  label: string;
-  icon: string;
-}
-
-const createSchema = (fields: InputField[]) => {
+const createSchema = (fields: InputAuthField[]) => {
   const schemaObj: Record<string, any> = {};
 
   fields.forEach(field => {
@@ -30,13 +24,14 @@ const createSchema = (fields: InputField[]) => {
 };
 
 export const FormAuth = ({ children }: { children?: ReactNode }) => {
-  const navigation = useNavigation<MainNavigationProp>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<MainStackNavigatorProps>>();
   const { name: routeName } = useRoute();
   const isLogin = routeName?.toLowerCase() === 'login';
 
-  const inputFields: InputField[] = isLogin
-    ? INPUT_LOGIN_FIELDS
-    : INPUT_REGISTER_FIELDS;
+  const inputFields: InputAuthField[] = isLogin
+    ? (INPUT_LOGIN_FIELDS as InputAuthField[])
+    : (INPUT_REGISTER_FIELDS as InputAuthField[]);
   const schema = createSchema(inputFields);
   type FormFields = z.infer<typeof schema>;
 

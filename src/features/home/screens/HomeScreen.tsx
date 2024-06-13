@@ -1,20 +1,20 @@
 import { FlatList, StyleSheet, Text } from 'react-native';
 import { FC } from 'react';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ProtectedLayout } from '../../../components';
-import { NAVLINK_LABELS } from '../../../utils/arrays';
-import { NavLink } from '../components/NavLink';
 import {
-  HomeNavigationProp,
-  HomeStackNavigatorProps,
-} from '../../../navigators/HomeStackNavigator';
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import { ProtectedLayout } from '../../../components';
+import { NavLink } from '../components/NavLink';
+import { NAVLINK_LABELS } from '../../../utils/arrays';
 
 export const HomeScreen: FC<
   NativeStackScreenProps<HomeStackNavigatorProps, 'Home'>
 > = () => {
   const user = 'Leonardo';
-  const navigation = useNavigation<HomeNavigationProp>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<HomeStackNavigatorProps>>();
 
   return (
     <ProtectedLayout>
