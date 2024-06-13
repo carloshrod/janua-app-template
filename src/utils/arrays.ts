@@ -21,7 +21,7 @@ export const INPUT_REGISTER_FIELDS = [
 
 export const NAVLINK_LABELS = [
   {
-    label: 'Control de Visitas',
+    label: 'Control de Acceso',
     icon: VisitControlIcon,
     navigateTo: 'Control de Acceso',
   },
@@ -30,4 +30,27 @@ export const NAVLINK_LABELS = [
   { label: 'Comunicados', icon: SpeakerIcon, navigateTo: 'Home' },
   { label: 'Clasificados', icon: DocumentIcon, navigateTo: 'Home' },
   { label: 'Incidentes', icon: AlertIcon, navigateTo: 'Home' },
+];
+
+export const ACCESS_CONTROL_ITEMS = [
+  {
+    label: 'Registro de visitante',
+    icon: 'account-check',
+    navigateTo: 'Control de Acceso',
+  },
+  {
+    label: 'Empleados domésticos',
+    icon: 'account-tie',
+    navigateTo: 'Control de Acceso',
+  },
+  {
+    label: 'Bitácoras de entradas',
+    icon: 'file-document',
+    navigateTo: 'Control de Acceso',
+  },
+  {
+    label: 'Tarjetas de acceso',
+    icon: 'badge-account-horizontal',
+    navigateTo: 'Control de Acceso',
+  },
 ];

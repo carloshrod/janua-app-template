@@ -1,28 +1,16 @@
 import { FC } from 'react';
-import { SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
-import {
-  NativeStackNavigationProp,
-  NativeStackScreenProps,
-} from '@react-navigation/native-stack';
-import { Icon } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { AuthLayout } from '../../../components';
 import { FormAuth } from '../components/FormAuth';
+import { GoBack } from '../../../components/shared/GoBack';
 
 export const SignupScreen: FC<
   NativeStackScreenProps<MainStackNavigatorProps, 'Signup'>
 > = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<MainStackNavigatorProps>>();
-
   return (
     <AuthLayout>
-      <TouchableOpacity
-        activeOpacity={0.7}
-        style={styles.goBack}
-        onPress={() => navigation.goBack()}>
-        <Icon source='arrow-left' size={30} color='#FFFFFF' />
-      </TouchableOpacity>
+      <GoBack />
       <SafeAreaView style={styles.container}>
         <FormAuth />
       </SafeAreaView>

@@ -21,7 +21,7 @@ type DrawerNavigatorProps = {
 
 type HomeStackNavigatorProps = {
   Home: undefined;
-  'Control de Visitas': undefined;
+  'Control de Acceso': undefined;
   Reservaciones: undefined;
   Pagos: undefined;
   Comunicados: undefined;

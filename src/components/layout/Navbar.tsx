@@ -5,8 +5,9 @@ import {
   useNavigation,
   useRoute,
 } from '@react-navigation/native';
-import { NavbarLogo } from '../../assets/images';
 import { Icon } from 'react-native-paper';
+import { GoBack } from '../shared/GoBack';
+import { NavbarLogo } from '../../assets/images';
 
 const Navbar = () => {
   const navigation = useNavigation();
@@ -46,7 +47,7 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          <Text>GoBack</Text>
+          <GoBack top={16} left={20} />
           <Text
             style={[
               styles.routeName,
