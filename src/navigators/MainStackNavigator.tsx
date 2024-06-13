@@ -2,8 +2,8 @@ import {
   NativeStackNavigationProp,
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import { LoginScreen, SignupScreen } from '../screens';
 import { ProtectedScreensTabNavigator } from './';
+import { LoginScreen, SignupScreen } from '../features';
 
 export type MainStackNavigatorProps = {
   login: undefined;

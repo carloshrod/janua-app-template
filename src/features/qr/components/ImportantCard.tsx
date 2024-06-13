@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { MaxSpeedIcon, NoGarbageIcon, ShowQrIcon } from '../../../assets/icons';
 
-const ImportantCard = () => {
+export const ImportantCard = () => {
   return (
     <View style={styles.important}>
       <Text style={styles.importantText}>¡Importante!</Text>
@@ -57,5 +57,3 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
 });
-
-export default ImportantCard;

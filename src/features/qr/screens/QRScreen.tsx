@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { ProtectedLayout } from '../../components';
 import { ScrollView } from 'react-native';
-import QRCard from './components/QRCard';
-import ImportantCard from './components/ImportantCard';
+import { ProtectedLayout } from '../../../components';
+import { QRCard } from '../components/QRCard';
+import { ImportantCard } from '../components/ImportantCard';
 
 export const QRScreen = () => {
   return (

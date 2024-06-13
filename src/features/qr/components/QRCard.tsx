@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { MainLogo, QRExample } from '../../../assets/images';
 
-const QRCard = () => {
+export const QRCard = () => {
   const createdAt = '24/01/2024 18:00 hs';
   const expiresAt = '25/01/2024 18:00 hs';
   const guest = 'Luis Perez';
@@ -67,5 +67,3 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
 });
-
-export default QRCard;

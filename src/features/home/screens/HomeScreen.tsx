@@ -1,19 +1,20 @@
 import { FlatList, StyleSheet, Text } from 'react-native';
 import { FC } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ProtectedScreensTabNavigatorProps } from '../../navigators';
-import { ProtectedLayout } from '../../components';
-import { NAVLINK_LABELS } from '../../utils/arrays';
-import { NavLink } from './components/NavLink';
-
-export type HomeScreensStackNavigatorProps = {
-  'Control de Acceso': undefined;
-};
+import { ProtectedLayout } from '../../../components';
+import { NAVLINK_LABELS } from '../../../utils/arrays';
+import { NavLink } from '../components/NavLink';
+import {
+  HomeNavigationProp,
+  HomeStackNavigatorProps,
+} from '../../../navigators/HomeStackNavigator';
+import { useNavigation } from '@react-navigation/native';
 
 export const HomeScreen: FC<
-  NativeStackScreenProps<ProtectedScreensTabNavigatorProps, 'Home'>
+  NativeStackScreenProps<HomeStackNavigatorProps, 'Home'>
 > = () => {
   const user = 'Leonardo';
+  const navigation = useNavigation<HomeNavigationProp>();
 
   return (
     <ProtectedLayout>
@@ -22,7 +23,12 @@ export const HomeScreen: FC<
       <FlatList
         style={styles.navContainer}
         data={NAVLINK_LABELS}
-        renderItem={({ item }) => <NavLink {...item} />}
+        renderItem={({ item }) => (
+          <NavLink
+            {...item}
+            onPress={() => navigation.navigate('Control de Visitas')}
+          />
+        )}
         keyExtractor={item => item.label}
         showsVerticalScrollIndicator={false}
       />

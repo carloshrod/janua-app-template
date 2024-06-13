@@ -1,13 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { INPUT_LOGIN_FIELDS, INPUT_REGISTER_FIELDS } from '../utils/arrays';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { ReactNode } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { CustomInput } from './CustomInput';
-import { MainNavigationProp } from '../navigators';
-import { CustomButton } from './CustomButton';
+import { MainNavigationProp } from '../../../navigators';
+import {
+  INPUT_LOGIN_FIELDS,
+  INPUT_REGISTER_FIELDS,
+} from '../../../utils/arrays';
+import { CustomButton, CustomInput } from '../../../components';
 
 export interface InputField {
   name: 'email' | 'username' | 'password' | 'repeatPassword';

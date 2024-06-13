@@ -2,9 +2,13 @@ import { FC } from 'react';
 import { SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Icon } from 'react-native-paper';
-import { MainNavigationProp, MainStackNavigatorProps } from '../../navigators';
+import {
+  MainNavigationProp,
+  MainStackNavigatorProps,
+} from '../../../navigators';
 import { useNavigation } from '@react-navigation/native';
-import { AuthLayout, FormAuth } from '../../components';
+import { AuthLayout } from '../../../components';
+import { FormAuth } from '../components/FormAuth';
 
 export const SignupScreen: FC<
   NativeStackScreenProps<MainStackNavigatorProps, 'signup'>

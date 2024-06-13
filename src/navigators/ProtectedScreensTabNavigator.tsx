@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { EventsScreen, QRScreen } from '../screens';
 import { Icon } from 'react-native-paper';
 import { Image } from 'react-native';
 import { CalendarIcon } from '../assets/icons';
 import { HomeStackNavigator } from './HomeStackNavigator';
+import { EventsScreen, QRScreen } from '../features';
 
 export type ProtectedScreensTabNavigatorProps = {
   HomeStack: undefined;
