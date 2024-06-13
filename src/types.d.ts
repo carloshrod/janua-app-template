@@ -1,13 +1,22 @@
 type MainStackNavigatorProps = {
-  login: undefined;
-  signup: undefined;
-  'protected-screens': undefined;
+  Login: undefined;
+  Signup: undefined;
+  DrawerNavigator: undefined;
 };
 
-type ProtectedScreensTabNavigatorProps = {
+type TabNavigatorProps = {
   HomeStack: undefined;
   Eventos: undefined;
   QR: undefined;
+};
+
+type DrawerNavigatorProps = {
+  TabNavigator: undefined;
+  Asociados: undefined;
+  Vehiculos: undefined;
+  Documentos: undefined;
+  MiPerfil: undefined;
+  Configuracion: undefined;
 };
 
 type HomeStackNavigatorProps = {

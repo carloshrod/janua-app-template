@@ -49,7 +49,7 @@ export const FormAuth = ({ children }: { children?: ReactNode }) => {
   const onSubmit: SubmitHandler<FormFields> = async () => {
     try {
       console.log('Iniciando sesión!');
-      navigation.replace('protected-screens');
+      navigation.replace('DrawerNavigator');
     } catch (err) {
       console.error(err);
     }

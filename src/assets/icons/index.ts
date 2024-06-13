@@ -7,5 +7,4 @@ export const AlertIcon = require('./alert.png');
 export const MaxSpeedIcon = require('./max-speed.png');
 export const ShowQrIcon = require('./show-qr.png');
 export const NoGarbageIcon = require('./no-garbage.png');
-export const AvatarIcon = require('./avatar.png');
 export const CalendarIcon = require('./calendar.png');

@@ -2,12 +2,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-paper';
 import { Image } from 'react-native';
 import { CalendarIcon } from '../assets/icons';
-import { HomeStackNavigator } from './HomeStackNavigator';
+import { HomeStackNavigator } from './';
 import { EventsScreen, QRScreen } from '../features';
 
-const Tab = createBottomTabNavigator<ProtectedScreensTabNavigatorProps>();
+const Tab = createBottomTabNavigator<TabNavigatorProps>();
 
-export const ProtectedScreensTabNavigator = () => {
+export const TabNavigator = () => {
   return (
     <Tab.Navigator
       initialRouteName='HomeStack'

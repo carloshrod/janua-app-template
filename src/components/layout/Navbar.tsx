@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import { View, Text, Image, StyleSheet, Pressable, Alert } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import {
+  DrawerActions,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/native';
 import { NavbarLogo } from '../../assets/images';
 import { Icon } from 'react-native-paper';
 
 const Navbar = () => {
+  const navigation = useNavigation();
   const { name } = useRoute();
   const [checked, setChecked] = useState(false);
 
@@ -12,14 +17,14 @@ const Navbar = () => {
   const isDrawer = name?.toLowerCase() === 'home';
   const isHiddenNavbar = HIDDEN_NAVBAR.includes(name);
   const isBgLight = name?.toLowerCase() === 'vehiculos';
-
   const notificationsLength = 1;
 
   return isDrawer || !isHiddenNavbar ? (
     <View style={[styles.navBar, isBgLight ? styles.bgLight : styles.bgDark]}>
       {isDrawer ? (
         <>
-          <Pressable>
+          <Pressable
+            onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
             <Icon source='menu' size={26} color='#FFFFFF' />
           </Pressable>
           <Image source={NavbarLogo} />

@@ -10,7 +10,7 @@ import { AuthLayout } from '../../../components';
 import { FormAuth } from '../components/FormAuth';
 
 export const LoginScreen: FC<
-  NativeStackScreenProps<MainStackNavigatorProps, 'login'>
+  NativeStackScreenProps<MainStackNavigatorProps, 'Login'>
 > = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<MainStackNavigatorProps>>();
@@ -26,7 +26,7 @@ export const LoginScreen: FC<
               <Text style={styles.link}>Crear una nueva cuenta?</Text>
               <TouchableOpacity
                 activeOpacity={0.7}
-                onPress={() => navigation.navigate('signup')}>
+                onPress={() => navigation.navigate('Signup')}>
                 <Text style={styles.link}>Click aquí</Text>
               </TouchableOpacity>
             </View>

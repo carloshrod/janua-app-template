@@ -10,7 +10,7 @@ import { AuthLayout } from '../../../components';
 import { FormAuth } from '../components/FormAuth';
 
 export const SignupScreen: FC<
-  NativeStackScreenProps<MainStackNavigatorProps, 'signup'>
+  NativeStackScreenProps<MainStackNavigatorProps, 'Signup'>
 > = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<MainStackNavigatorProps>>();

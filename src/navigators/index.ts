@@ -1,2 +1,4 @@
 export * from './MainStackNavigator';
-export * from './ProtectedScreensTabNavigator';
+export * from './DrawerNavigator';
+export * from './TabNavigator';
+export * from './HomeStackNavigator';
