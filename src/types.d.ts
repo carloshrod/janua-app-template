@@ -42,3 +42,9 @@ interface InputAuthField {
   label: string;
   icon: string;
 }
+
+type LogsProps = {
+  title: string;
+  date: string;
+  description: string;
+};
