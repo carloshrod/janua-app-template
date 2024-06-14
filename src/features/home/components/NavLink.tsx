@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     gap: 24,
   },
   labelText: {
-    fontFamily: 'Inter-Regular',
+    fontFamily: 'Inter-SemiBold',
     fontSize: 14,
     color: '#25292E',
   },

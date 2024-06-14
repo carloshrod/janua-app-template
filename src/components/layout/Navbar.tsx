@@ -14,9 +14,9 @@ const Navbar = () => {
   const { name } = useRoute();
   const [checked, setChecked] = useState(false);
 
-  const HIDDEN_NAVBAR = ['Eventos', 'QR'];
+  const HIDDEN_NAVBAR = ['eventos', 'qr'];
   const isDrawer = name?.toLowerCase() === 'home';
-  const isHiddenNavbar = HIDDEN_NAVBAR.includes(name);
+  const isHiddenNavbar = HIDDEN_NAVBAR.includes(name.toLowerCase());
   const isBgLight = name?.toLowerCase() === 'vehiculos';
   const notificationsLength = 1;
 
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   notificationNumber: {
     textAlign: 'center',
-    fontFamily: 'DMSansBold',
+    fontFamily: 'DMSans-Bold',
     fontSize: 12,
     lineHeight: 18,
     color: '#FFFFFF',
@@ -98,14 +98,14 @@ const styles = StyleSheet.create({
   },
   routeName: {
     margin: 'auto',
-    fontFamily: 'DMSansBold',
+    fontFamily: 'DMSans-Bold',
     fontSize: 18,
   },
   textLight: {
     color: '#FFFFFF',
   },
   textDark: {
-    color: '#25292E',
+    color: '#000000',
   },
 });
 

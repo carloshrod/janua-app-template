@@ -1,7 +1,9 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Icon } from 'react-native-paper';
+import { Text } from 'react-native';
 import CustomDrawer from '../components/layout/CustomDrawer';
 import { TabNavigator } from './';
+import { VehiclesScreen } from '../features';
 
 const Drawer = createDrawerNavigator<DrawerNavigatorProps>();
 
@@ -22,16 +24,16 @@ export const DrawerNavigator = () => {
         options={{
           drawerIcon: AssociatesDrawerIcon,
         }}>
-        {() => <></>}
+        {() => <Text>Asociados</Text>}
       </Drawer.Screen>
       <Drawer.Screen
         name='Vehiculos'
+        component={VehiclesScreen}
         options={{
           title: 'Vehículos',
           drawerIcon: VehiclesDrawerIcon,
-        }}>
-        {() => <></>}
-      </Drawer.Screen>
+        }}
+      />
       <Drawer.Screen
         name='Documentos'
         options={{
@@ -45,7 +47,7 @@ export const DrawerNavigator = () => {
           title: 'Mi Perfil',
           drawerIcon: MyProfileDrawerIcon,
         }}>
-        {() => <></>}
+        {() => <Text>Mi Perfil</Text>}
       </Drawer.Screen>
       <Drawer.Screen
         name='Configuracion'
@@ -53,7 +55,7 @@ export const DrawerNavigator = () => {
           title: 'Configuración',
           drawerIcon: SettingsDrawerIcon,
         }}>
-        {() => <></>}
+        {() => <Text>Configuración</Text>}
       </Drawer.Screen>
     </Drawer.Navigator>
   );

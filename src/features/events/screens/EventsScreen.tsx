@@ -18,6 +18,7 @@ export const EventsScreen: FC<
       <Text style={styles.screenName}>Eventos</Text>
       <View style={styles.eventContainer}>
         <Image source={Calendar} />
+
         <Text style={styles.eventName}>{eventName}</Text>
         <Text style={styles.guestsName}>{guestsName}</Text>
         <CustomButton
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
     fontFamily: 'DMSans-Bold',
     fontSize: 18,
+    color: '#000000',
   },
   eventContainer: {
     width: '80%',
@@ -47,6 +49,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'DMSans-Bold',
     fontSize: 24,
+    color: '#000000',
   },
   guestsName: {
     marginTop: 24,

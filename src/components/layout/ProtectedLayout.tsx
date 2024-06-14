@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 export const ProtectedLayout = ({ children }: { children: ReactNode }) => {
   const { name } = useRoute();
-  const BG_LIGHT = ['eventos', 'vehículos'];
+  const BG_LIGHT = ['eventos', 'vehiculos'];
   const isBgDark = !BG_LIGHT.includes(name?.toLowerCase());
 
   return (

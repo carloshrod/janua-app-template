@@ -5,7 +5,8 @@ import { Icon } from 'react-native-paper';
 export const GoBack = ({ top = 20, left = 20 }) => {
   const navigation = useNavigation();
   const { name } = useRoute();
-  const isLight = name?.toLowerCase() === 'vehículos';
+  const isLight =
+    name?.toLowerCase() === 'vehiculos' || name?.toLowerCase() === 'eventos';
 
   return (
     <TouchableOpacity
@@ -15,7 +16,7 @@ export const GoBack = ({ top = 20, left = 20 }) => {
       <Icon
         source='arrow-left'
         size={24}
-        color={isLight ? '#25292E' : '#FFFFFF'}
+        color={isLight ? '#000000' : '#FFFFFF'}
       />
     </TouchableOpacity>
   );
