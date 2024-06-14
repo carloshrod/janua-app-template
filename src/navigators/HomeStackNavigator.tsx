@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AccessControlScreen, HomeScreen } from '../features';
+import { HomeScreen } from '../features';
+import { AccessControlStackNavigator } from './';
 
 const Stack = createNativeStackNavigator<HomeStackNavigatorProps>();
 
@@ -9,7 +10,10 @@ export const HomeStackNavigator = () => {
       initialRouteName='Home'
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name='Home' component={HomeScreen} />
-      <Stack.Screen name='Control de Acceso' component={AccessControlScreen} />
+      <Stack.Screen
+        name='AccessControlStack'
+        component={AccessControlStackNavigator}
+      />
     </Stack.Navigator>
   );
 };

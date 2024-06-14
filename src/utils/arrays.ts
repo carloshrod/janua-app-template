@@ -23,7 +23,7 @@ export const NAVLINK_LABELS = [
   {
     label: 'Control de Acceso',
     icon: VisitControlIcon,
-    navigateTo: 'Control de Acceso',
+    navigateTo: 'AccessControlStack',
   },
   { label: 'Reservaciones', icon: AppointmentIcon, navigateTo: 'Home' },
   { label: 'Pagos', icon: PaymentIcon, navigateTo: 'Home' },

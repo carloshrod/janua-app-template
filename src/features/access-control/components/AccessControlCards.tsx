@@ -6,7 +6,7 @@ import { ACCESS_CONTROL_ITEMS } from '../../../utils/arrays';
 
 export const AccessControlCards = () => {
   const navigation =
-    useNavigation<NativeStackNavigationProp<HomeStackNavigatorProps>>();
+    useNavigation<NativeStackNavigationProp<AccessControlNavigatorProps>>();
 
   return (
     <View style={styles.container}>
@@ -19,7 +19,7 @@ export const AccessControlCards = () => {
             style={styles.gridItem}
             onPress={() =>
               navigation.navigate(
-                item.navigateTo as keyof HomeStackNavigatorProps,
+                item.navigateTo as keyof AccessControlNavigatorProps,
               )
             }>
             <Icon source={item.icon} size={32} color='#000000' />

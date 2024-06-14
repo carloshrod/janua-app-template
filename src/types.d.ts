@@ -4,12 +4,6 @@ type MainStackNavigatorProps = {
   DrawerNavigator: undefined;
 };
 
-type TabNavigatorProps = {
-  HomeStack: undefined;
-  Eventos: undefined;
-  QR: undefined;
-};
-
 type DrawerNavigatorProps = {
   TabNavigator: undefined;
   Asociados: undefined;
@@ -19,14 +13,28 @@ type DrawerNavigatorProps = {
   Configuracion: undefined;
 };
 
+type TabNavigatorProps = {
+  HomeStack: undefined;
+  Eventos: undefined;
+  QR: undefined;
+};
+
 type HomeStackNavigatorProps = {
   Home: undefined;
-  'Control de Acceso': undefined;
+  AccessControlStack: undefined;
   Reservaciones: undefined;
   Pagos: undefined;
   Comunicados: undefined;
   Clasificados: undefined;
   Incidentes: undefined;
+};
+
+type AccessControlNavigatorProps = {
+  'Control de Acceso': undefined;
+  'Registro de visitante': undefined;
+  'Empleados domésticos': undefined;
+  'Bitácores de entradas': undefined;
+  'Tarjetas de acceso': undefined;
 };
 
 interface InputAuthField {
