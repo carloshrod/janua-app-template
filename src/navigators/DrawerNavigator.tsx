@@ -3,7 +3,7 @@ import { Icon } from 'react-native-paper';
 import { Text } from 'react-native';
 import CustomDrawer from '../components/layout/CustomDrawer';
 import { TabNavigator } from './';
-import { VehiclesScreen } from '../features';
+import { DocumentsScreen, VehiclesScreen } from '../features';
 
 const Drawer = createDrawerNavigator<DrawerNavigatorProps>();
 
@@ -36,11 +36,11 @@ export const DrawerNavigator = () => {
       />
       <Drawer.Screen
         name='Documentos'
+        component={DocumentsScreen}
         options={{
           drawerIcon: DocumentsDrawerIcon,
-        }}>
-        {() => <></>}
-      </Drawer.Screen>
+        }}
+      />
       <Drawer.Screen
         name='MiPerfil'
         options={{
