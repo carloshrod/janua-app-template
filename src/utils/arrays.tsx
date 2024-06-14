@@ -101,28 +101,28 @@ export const VISITOR_LOGS_ITEMS = [
 export const ACTIONS = [
   {
     text: 'Agregar Visita Eventual',
-    icon: <Icon source='plus' size={20} color='#FFFFFF' />,
+    icon: <Icon source='calendar-check' size={20} color='#FFFFFF' />,
     name: 'eventual',
     position: 1,
     color: '#FFCD06',
   },
   {
     text: 'Agregar Visita Frecuente',
-    icon: <Icon source='plus' size={20} color='#FFFFFF' />,
+    icon: <Icon source='calendar-sync' size={20} color='#FFFFFF' />,
     name: 'frequent',
     position: 2,
     color: '#FFCD06',
   },
   {
     text: 'Agregar Paquetería',
-    icon: <Icon source='plus' size={20} color='#FFFFFF' />,
+    icon: <Icon source='package-variant-closed' size={20} color='#FFFFFF' />,
     name: 'package',
     position: 3,
     color: '#FFCD06',
   },
   {
     text: 'Agregar Empleado',
-    icon: <Icon source='plus' size={20} color='#FFFFFF' />,
+    icon: <Icon source='account-tie' size={20} color='#FFFFFF' />,
     name: 'employee',
     position: 4,
     color: '#FFCD06',
@@ -131,15 +131,15 @@ export const ACTIONS = [
 
 export const ACTIONS_MENU = [
   {
-    icon: 'plus',
+    icon: 'square-edit-outline',
     label: 'Editar',
   },
   {
-    icon: 'plus',
+    icon: 'content-copy',
     label: 'Copiar',
   },
   {
-    icon: 'plus',
+    icon: 'trash-can',
     label: 'Borrar',
   },
 ];

@@ -1,27 +1,12 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { ReactNode } from 'react';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import {
   INPUT_LOGIN_FIELDS,
   INPUT_REGISTER_FIELDS,
 } from '../../../utils/arrays';
 import { CustomButton, CustomInput } from '../../../components';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
-const createSchema = (fields: InputAuthField[]) => {
-  const schemaObj: Record<string, any> = {};
-
-  fields.forEach(field => {
-    schemaObj[field.name] = z
-      .string()
-      .min(1, { message: `${field.label} es requerido!` });
-  });
-
-  return z.object(schemaObj);
-};
 
 export const FormAuth = ({ children }: { children?: ReactNode }) => {
   const navigation =
@@ -32,23 +17,9 @@ export const FormAuth = ({ children }: { children?: ReactNode }) => {
   const inputFields: InputAuthField[] = isLogin
     ? (INPUT_LOGIN_FIELDS as InputAuthField[])
     : (INPUT_REGISTER_FIELDS as InputAuthField[]);
-  const schema = createSchema(inputFields);
-  type FormFields = z.infer<typeof schema>;
 
-  const {
-    control,
-    formState: { isSubmitting },
-  } = useForm<FormFields>({
-    resolver: zodResolver(schema),
-    defaultValues: inputFields.reduce(
-      (acc, { name }) => ({ ...acc, [name]: '' }),
-      {},
-    ),
-  });
-
-  const onSubmit: SubmitHandler<FormFields> = async () => {
+  const onSubmit = () => {
     try {
-      console.log('Iniciando sesión!');
       navigation.replace('DrawerNavigator');
     } catch (err) {
       console.error(err);
@@ -63,33 +34,12 @@ export const FormAuth = ({ children }: { children?: ReactNode }) => {
   return (
     <View style={styles.form}>
       <Text style={styles.title}>{title}</Text>
-
-      {inputFields.map(({ name, label, icon }, index) => (
+      {inputFields.map(({ label, icon }, index) => (
         <View key={`input-${index}`} style={styles.inputContainer}>
-          <Controller
-            control={control}
-            name={name as keyof FormFields}
-            render={({ field: { onChange, onBlur, value } }) => {
-              return (
-                <CustomInput
-                  label={label}
-                  icon={icon}
-                  value={value}
-                  onChangeText={onChange}
-                  onBlur={onBlur}
-                />
-              );
-            }}
-          />
+          <CustomInput label={label} icon={icon} />
         </View>
       ))}
-
-      <CustomButton
-        label={btnLabel}
-        isSubmitting={isSubmitting}
-        onPress={onSubmit}
-      />
-
+      <CustomButton label={btnLabel} onPress={onSubmit} />
       {children}
     </View>
   );
@@ -113,9 +63,10 @@ const styles = StyleSheet.create({
     shadowRadius: 24,
   },
   title: {
+    marginBottom: 16,
     textAlign: 'center',
     fontFamily: 'DMSans-Regular',
-    marginBottom: 16,
+    color: '#000000',
   },
   inputContainer: {
     width: '100%',

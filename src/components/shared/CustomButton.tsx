@@ -11,7 +11,6 @@ interface ButtonProps {
 export const CustomButton = ({
   label,
   width = undefined,
-  isSubmitting,
   onPress = () => null,
 }: ButtonProps) => {
   return (
@@ -22,8 +21,6 @@ export const CustomButton = ({
       style={[styles.button, { width: width ?? '100%' }]}
       contentStyle={styles.buttonContent}
       labelStyle={styles.buttonLabel}
-      disabled={isSubmitting}
-      loading={isSubmitting}
       onPress={onPress}>
       {label}
     </Button>

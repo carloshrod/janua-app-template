@@ -22,7 +22,7 @@ export const AccessControlCards = () => {
                 item.navigateTo as keyof AccessControlNavigatorProps,
               )
             }>
-            <Icon source={item.icon} size={32} color='#000000' />
+            <Icon source={item.icon} size={32} color='#25292E' />
             <Text style={styles.gridItemLabel}>{item.label}</Text>
           </Pressable>
         )}

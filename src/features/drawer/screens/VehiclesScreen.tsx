@@ -14,6 +14,7 @@ export const VehiclesScreen = () => {
         <Text style={styles.vehicleName}>{vehicleName}</Text>
         <CustomButton
           label='Registrar vehículos'
+          width={200}
           onPress={() => Alert.alert('Registrando vehículos!')}
         />
       </View>

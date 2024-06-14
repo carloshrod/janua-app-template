@@ -5,7 +5,7 @@ import { ProtectedLayout } from '../../../components';
 import { NavLink } from '../components/NavLink';
 import { NAVLINK_LABELS } from '../../../utils/arrays';
 
-export interface NavLinkProps {
+export interface NavLinkLabelsProps {
   label: string;
   icon: ImageProps;
   navigateTo: keyof HomeStackNavigatorProps;
@@ -13,7 +13,7 @@ export interface NavLinkProps {
 
 export const HomeScreen: FC<
   NativeStackScreenProps<HomeStackNavigatorProps, 'Home'>
-> = () => {
+> = ({ navigation }) => {
   const user = 'Leonardo';
 
   return (
@@ -22,8 +22,13 @@ export const HomeScreen: FC<
       <Text style={styles.subTitle}>¿En qué podemos ayudarte?</Text>
       <FlatList
         style={styles.navContainer}
-        data={NAVLINK_LABELS as NavLinkProps[]}
-        renderItem={({ item }) => <NavLink {...item} />}
+        data={NAVLINK_LABELS as NavLinkLabelsProps[]}
+        renderItem={({ item }) => (
+          <NavLink
+            {...item}
+            onNavigation={() => navigation.navigate(item.navigateTo)}
+          />
+        )}
         keyExtractor={item => item.label}
         showsVerticalScrollIndicator={false}
       />
